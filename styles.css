@@ -1,0 +1,1603 @@
+/* ============================================
+   Valentine's Day Website - Romantic Styles
+   ============================================ */
+
+/* CSS Variables */
+:root {
+    --primary-pink: #ff6b9d;
+    --secondary-pink: #ff8fab;
+    --accent-red: #e63946;
+    --deep-rose: #c9184a;
+    --soft-pink: #ffb3c6;
+    --light-pink: #ffd6e0;
+    --cream: #fff5f7;
+    --gold: #ffd700;
+    --white: #ffffff;
+    --text-dark: #4a2c40;
+    --gradient-romantic: linear-gradient(135deg, #ff6b9d 0%, #c9184a 50%, #ff8fab 100%);
+    --gradient-soft: linear-gradient(135deg, #ffd6e0 0%, #ffb3c6 100%);
+    --gradient-sunset: linear-gradient(180deg, #ff6b9d 0%, #ff8fab 30%, #ffd6e0 70%, #fff5f7 100%);
+    --shadow-soft: 0 10px 40px rgba(201, 24, 74, 0.15);
+    --shadow-glow: 0 0 30px rgba(255, 107, 157, 0.4);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-sunset);
+    min-height: 100vh;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+    font-size: 20px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Glass Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(180deg,
+            rgba(255, 107, 157, 0.3) 0%,
+            rgba(255, 143, 171, 0.2) 50%,
+            transparent 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.heart-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    color: var(--deep-rose);
+    text-shadow: 2px 2px 4px rgba(201, 24, 74, 0.2);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--primary-pink);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.fade-in-delay {
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    margin-top: 60px;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary-pink);
+    margin-bottom: 10px;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 3px solid var(--primary-pink);
+    border-bottom: 3px solid var(--primary-pink);
+    transform: rotate(45deg);
+    margin: 0 auto;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+/* ============================================
+   Love Letter Section
+   ============================================ */
+.love-letter {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.letter-container {
+    max-width: 700px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-romantic);
+}
+
+.letter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.letter-date {
+    color: var(--primary-pink);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.letter-hearts {
+    font-size: 24px;
+}
+
+.letter-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--deep-rose);
+    margin-bottom: 25px;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--deep-rose);
+    margin-top: 30px;
+    text-align: right;
+}
+
+.heart-signature {
+    font-size: 2rem;
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   Section Title
+   ============================================ */
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--deep-rose);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '💕';
+    display: block;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   Reasons Section
+   ============================================ */
+.reasons {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.reason-card {
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-glow);
+}
+
+.reason-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.reason-card h3 {
+    font-size: 1.4rem;
+    color: var(--deep-rose);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.reason-card p {
+    color: var(--text-dark);
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+/* ============================================
+   Memory Timeline Section
+   ============================================ */
+.memories {
+    padding: 80px 20px;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(255, 214, 224, 0.3) 50%,
+            transparent 100%);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-romantic);
+    border-radius: 4px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item::before {
+    content: '❤️';
+    position: absolute;
+    top: 30px;
+    font-size: 24px;
+    z-index: 2;
+}
+
+.timeline-item.left::before {
+    right: -12px;
+}
+
+.timeline-item.right::before {
+    left: -12px;
+}
+
+.timeline-content {
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.timeline-date {
+    display: inline-block;
+    background: var(--gradient-romantic);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: var(--deep-rose);
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: var(--text-dark);
+    opacity: 0.85;
+}
+
+/* Mobile Timeline */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-item::before {
+        left: 8px !important;
+        right: auto !important;
+    }
+}
+
+/* ============================================
+   Interactive Section
+   ============================================ */
+.interactive {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.interactive-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.big-heart {
+    font-size: 120px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    user-select: none;
+}
+
+.big-heart:hover {
+    transform: scale(1.1);
+}
+
+.big-heart:active {
+    transform: scale(0.95);
+}
+
+.big-heart.clicked {
+    animation: heartBurst 0.6s ease;
+}
+
+@keyframes heartBurst {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.4);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    70% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.love-message {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    color: var(--deep-rose);
+    min-height: 40px;
+    transition: all 0.5s ease;
+}
+
+/* ============================================
+   Final Message Section
+   ============================================ */
+.final-message {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(201, 24, 74, 0.1) 100%);
+}
+
+.final-content {
+    max-width: 700px;
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.final-hearts {
+    margin-bottom: 30px;
+}
+
+.final-hearts span {
+    font-size: 40px;
+    margin: 0 5px;
+    display: inline-block;
+    animation: float 2s ease-in-out infinite;
+}
+
+.final-hearts span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.final-hearts span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.final-hearts span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.final-hearts span:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.final-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    color: var(--deep-rose);
+    margin-bottom: 25px;
+}
+
+.final-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.infinite-love {
+    margin-top: 30px;
+}
+
+.infinite-love span {
+    font-size: 60px;
+    color: var(--deep-rose);
+    display: block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.infinite-love p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-pink);
+    margin-top: 10px;
+}
+
+/* ============================================
+   Music Toggle Button
+   ============================================ */
+.music-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-romantic);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+.music-icon {
+    font-size: 24px;
+}
+
+.music-toggle.playing {
+    animation: musicPulse 1s ease infinite;
+}
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        box-shadow: var(--shadow-soft);
+    }
+
+    50% {
+        box-shadow: var(--shadow-glow), 0 0 50px rgba(255, 107, 157, 0.5);
+    }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .letter-container {
+        padding: 30px 25px;
+    }
+
+    .final-content {
+        padding: 40px 25px;
+    }
+
+    .reason-card {
+        padding: 30px 20px;
+    }
+
+    .music-toggle {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .music-icon {
+        font-size: 20px;
+    }
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Selection Color */
+::selection {
+    background: var(--soft-pink);
+    color: var(--deep-rose);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-pink);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-romantic);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--deep-rose);
+}
+
+/* ============================================
+   Love Question Overlay
+   ============================================ */
+.love-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c9184a 30%, #ff8fab 70%, #ffd6e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+.love-overlay::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: sparkleMove 20s linear infinite;
+}
+
+@keyframes sparkleMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50px, -50px);
+    }
+}
+
+.love-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.5);
+}
+
+/* Dialogue Container */
+.dialogue-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+}
+
+.dialogue-step {
+    display: none;
+    animation: stepFadeIn 0.6s ease-out;
+}
+
+.dialogue-step.active {
+    display: block;
+}
+
+@keyframes stepFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dialogue-card {
+    text-align: center;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 40px;
+    box-shadow: 0 30px 100px rgba(201, 24, 74, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.5),
+        inset 0 0 60px rgba(255, 107, 157, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+.glass-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.dialogue-emoji {
+    font-size: 60px;
+    margin-bottom: 25px;
+    animation: emojiFloat 2s ease-in-out infinite;
+}
+
+@keyframes emojiFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+}
+
+.dialogue-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--deep-rose);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(201, 24, 74, 0.2);
+}
+
+.dialogue-subtext {
+    font-size: 1.1rem;
+    color: var(--primary-pink);
+    margin-bottom: 35px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Next Button */
+.next-btn {
+    padding: 16px 45px;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c9184a 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 8px 30px rgba(201, 24, 74, 0.4);
+}
+
+.next-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 15px 40px rgba(201, 24, 74, 0.5);
+}
+
+.next-btn:active {
+    transform: scale(0.98);
+}
+
+/* Answer Buttons */
+.answer-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 70px;
+    position: relative;
+}
+
+.yes-btn,
+.no-btn {
+    padding: 16px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c9184a 100%);
+    color: white;
+    box-shadow: 0 8px 30px rgba(201, 24, 74, 0.4);
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(201, 24, 74, 0.5);
+}
+
+.yes-btn:active {
+    transform: scale(0.95);
+}
+
+.no-btn {
+    background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+    color: #666;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: all 0.15s ease;
+}
+
+.no-btn:hover {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c9184a 100%);
+    color: white;
+}
+
+.btn-emoji {
+    font-size: 1.2rem;
+}
+
+.hint-text {
+    margin-top: 25px;
+    font-size: 1rem;
+    color: var(--deep-rose);
+    font-style: italic;
+    min-height: 24px;
+    animation: fadeInHint 0.5s ease;
+}
+
+@keyframes fadeInHint {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Love Letter Button */
+.letter-btn {
+    padding: 20px 50px;
+    background: linear-gradient(135deg, #ff6b9d 0%, #e63946 50%, #c9184a 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 10px 40px rgba(201, 24, 74, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.letter-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 20px 50px rgba(201, 24, 74, 0.6);
+}
+
+.letter-btn:active {
+    transform: scale(0.98);
+}
+
+.letter-btn .envelope {
+    font-size: 1.5rem;
+    animation: envelopeWiggle 1s ease-in-out infinite;
+}
+
+@keyframes envelopeWiggle {
+
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.letter-btn .heart-bounce {
+    font-size: 1.3rem;
+    animation: heartBounce 0.8s ease-in-out infinite;
+}
+
+@keyframes heartBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Hide main content initially */
+.main-content.hidden {
+    display: none;
+}
+
+/* Celebration animation when Yes is clicked */
+@keyframes celebrateHeart {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(0) rotate(360deg) translateY(-200px);
+        opacity: 0;
+    }
+}
+
+.celebrate-heart {
+    position: fixed;
+    font-size: 40px;
+    pointer-events: none;
+    z-index: 10001;
+    animation: celebrateHeart 1.5s ease-out forwards;
+}
+
+/* Step exit animation */
+.dialogue-step.exit {
+    animation: stepFadeOut 0.4s ease-in forwards;
+}
+
+@keyframes stepFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+}
+
+/* Mobile responsiveness for overlay */
+@media (max-width: 768px) {
+    .dialogue-card {
+        padding: 35px 25px;
+        border-radius: 30px;
+        margin: 10px;
+    }
+
+    .answer-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dialogue-emoji {
+        font-size: 50px;
+    }
+
+    .letter-btn {
+        padding: 18px 35px;
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   Personalization Form Styles
+   ============================================ */
+.personalize-form {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--deep-rose);
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid var(--soft-pink);
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--deep-rose);
+    box-shadow: 0 0 20px rgba(201, 24, 74, 0.2);
+}
+
+.input-group input::placeholder {
+    color: var(--soft-pink);
+}
+
+.name-placeholder {
+    color: var(--deep-rose);
+    font-weight: 700;
+}
+
+/* ============================================
+   Color Theme Variations
+   ============================================ */
+
+/* Purple Theme */
+body.theme-purple {
+    --primary-pink: #9b59b6;
+    --secondary-pink: #bb8fce;
+    --deep-rose: #8e44ad;
+    --soft-pink: #d7bde2;
+    --light-pink: #ebdef0;
+    --gradient-romantic: linear-gradient(135deg, #9b59b6 0%, #8e44ad 50%, #bb8fce 100%);
+    --gradient-sunset: linear-gradient(180deg, #9b59b6 0%, #bb8fce 30%, #d7bde2 70%, #f5eef8 100%);
+    --shadow-soft: 0 10px 40px rgba(142, 68, 173, 0.15);
+    --shadow-glow: 0 0 30px rgba(155, 89, 182, 0.4);
+}
+
+/* Blue Theme */
+body.theme-blue {
+    --primary-pink: #3498db;
+    --secondary-pink: #85c1e9;
+    --deep-rose: #2980b9;
+    --soft-pink: #aed6f1;
+    --light-pink: #d6eaf8;
+    --gradient-romantic: linear-gradient(135deg, #3498db 0%, #2980b9 50%, #85c1e9 100%);
+    --gradient-sunset: linear-gradient(180deg, #3498db 0%, #85c1e9 30%, #aed6f1 70%, #ebf5fb 100%);
+    --shadow-soft: 0 10px 40px rgba(41, 128, 185, 0.15);
+    --shadow-glow: 0 0 30px rgba(52, 152, 219, 0.4);
+}
+
+/* Red Theme */
+body.theme-red {
+    --primary-pink: #e74c3c;
+    --secondary-pink: #f1948a;
+    --deep-rose: #c0392b;
+    --soft-pink: #fadbd8;
+    --light-pink: #fdedec;
+    --gradient-romantic: linear-gradient(135deg, #e74c3c 0%, #c0392b 50%, #f1948a 100%);
+    --gradient-sunset: linear-gradient(180deg, #e74c3c 0%, #f1948a 30%, #fadbd8 70%, #fff5f5 100%);
+    --shadow-soft: 0 10px 40px rgba(192, 57, 43, 0.15);
+    --shadow-glow: 0 0 30px rgba(231, 76, 60, 0.4);
+}
+
+/* Green Theme */
+body.theme-green {
+    --primary-pink: #27ae60;
+    --secondary-pink: #82e0aa;
+    --deep-rose: #1e8449;
+    --soft-pink: #abebc6;
+    --light-pink: #d5f5e3;
+    --gradient-romantic: linear-gradient(135deg, #27ae60 0%, #1e8449 50%, #82e0aa 100%);
+    --gradient-sunset: linear-gradient(180deg, #27ae60 0%, #82e0aa 30%, #abebc6 70%, #eafaf1 100%);
+    --shadow-soft: 0 10px 40px rgba(30, 132, 73, 0.15);
+    --shadow-glow: 0 0 30px rgba(39, 174, 96, 0.4);
+}
+
+/* Gold Theme */
+body.theme-gold {
+    --primary-pink: #f39c12;
+    --secondary-pink: #f8c471;
+    --deep-rose: #d68910;
+    --soft-pink: #fdebd0;
+    --light-pink: #fef9e7;
+    --gradient-romantic: linear-gradient(135deg, #f39c12 0%, #d68910 50%, #f8c471 100%);
+    --gradient-sunset: linear-gradient(180deg, #f39c12 0%, #f8c471 30%, #fdebd0 70%, #fffcf5 100%);
+    --shadow-soft: 0 10px 40px rgba(214, 137, 16, 0.15);
+    --shadow-glow: 0 0 30px rgba(243, 156, 18, 0.4);
+}
+
+/* ============================================
+   Quiz Card Styles
+   ============================================ */
+.quiz-card {
+    position: relative;
+}
+
+.quiz-progress {
+    background: var(--gradient-romantic);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.quiz-option {
+    padding: 18px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--soft-pink);
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    text-align: left;
+}
+
+.quiz-option:hover {
+    background: var(--gradient-romantic);
+    color: white;
+    border-color: transparent;
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(201, 24, 74, 0.3);
+}
+
+.quiz-option:active {
+    transform: scale(0.98);
+}
+
+/* Result Card */
+.result-card {
+    text-align: center;
+}
+
+.result-score {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--deep-rose);
+    margin: 20px 0;
+    animation: scorePopIn 0.6s ease-out;
+}
+
+@keyframes scorePopIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Quiz card smaller emoji */
+.quiz-card .dialogue-emoji {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.quiz-card .dialogue-text {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 25px;
+}
+
+/* ============================================
+   AI Chatbot Widget
+   ============================================ */
+.chatbot-container {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-romantic);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 25px rgba(201, 24, 74, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.chatbot-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(201, 24, 74, 0.5);
+}
+
+.chat-icon,
+.chat-close {
+    font-size: 28px;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.chat-close {
+    opacity: 0;
+    transform: rotate(-90deg);
+    color: white;
+    font-size: 24px;
+}
+
+.chatbot-container.open .chat-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.chatbot-container.open .chat-close {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* Chat Window */
+.chatbot-window {
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    width: 350px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(201, 24, 74, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.chatbot-container.open .chatbot-window {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* Chat Header */
+.chatbot-header {
+    background: var(--gradient-romantic);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chatbot-avatar {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.chatbot-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-name {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.chatbot-status {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+}
+
+/* Chat Messages */
+.chatbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-message {
+    display: flex;
+    animation: messageIn 0.3s ease;
+}
+
+@keyframes messageIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-message.bot {
+    justify-content: flex-start;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.chat-message.bot .message-content {
+    background: var(--light-pink);
+    color: var(--text-dark);
+    border-bottom-left-radius: 6px;
+}
+
+.chat-message.user .message-content {
+    background: var(--gradient-romantic);
+    color: white;
+    border-bottom-right-radius: 6px;
+}
+
+/* Typing indicator */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+    background: var(--light-pink);
+    border-radius: 18px;
+    border-bottom-left-radius: 6px;
+    width: fit-content;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-pink);
+    border-radius: 50%;
+    animation: typingBounce 1.4s ease-in-out infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Input Area */
+.chatbot-input-area {
+    padding: 15px 20px;
+    border-top: 1px solid var(--light-pink);
+    display: flex;
+    gap: 10px;
+    background: white;
+}
+
+.chatbot-input-area input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 2px solid var(--soft-pink);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.chatbot-input-area input:focus {
+    border-color: var(--deep-rose);
+}
+
+.chatbot-send {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient-romantic);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbot-send:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-send:active {
+    transform: scale(0.95);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .chatbot-container {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .chatbot-toggle {
+        width: 55px;
+        height: 55px;
+    }
+
+    .chatbot-window {
+        width: calc(100vw - 40px);
+        max-width: 350px;
+        height: 400px;
+    }
+}

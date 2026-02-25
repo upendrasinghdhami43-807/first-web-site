@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ For My Special Someone ❤️</title>
+    <meta name="description" content="A heartfelt message for the one I love">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Love Dialogue Overlay -->
+    <div class="love-overlay" id="love-overlay">
+        <!-- Dialogue Steps -->
+        <div class="dialogue-container" id="dialogue-container">
+
+            <!-- Step 1: Personalization Form -->
+            <div class="dialogue-step active" id="step-1">
+                <div class="dialogue-card glass-effect">
+                    <div class="dialogue-emoji">💝✨💕</div>
+                    <h2 class="dialogue-text">Create Your Love Message</h2>
+                    <p class="dialogue-subtext">Make it special for your loved one 💖</p>
+                    <div class="personalize-form">
+                        <div class="input-group">
+                            <label for="girlfriend-name">Her Name 💕</label>
+                            <input type="text" id="girlfriend-name" placeholder="Enter her beautiful name..." required>
+                        </div>
+                        <div class="input-group">
+                            <label for="favorite-color">Her Favorite Color 🎨</label>
+                            <select id="favorite-color">
+                                <option value="pink">💗 Pink (Classic Love)</option>
+                                <option value="purple">💜 Purple (Royal Love)</option>
+                                <option value="blue">💙 Blue (Ocean Love)</option>
+                                <option value="red">❤️ Red (Passionate Love)</option>
+                                <option value="green">💚 Green (Nature Love)</option>
+                                <option value="gold">💛 Gold (Precious Love)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="next-btn" id="start-btn">
+                        <span>Start The Magic</span> ✨
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Greeting -->
+            <div class="dialogue-step" id="step-2">
+                <div class="dialogue-card glass-effect">
+                    <div class="dialogue-emoji">👋💕</div>
+                    <h2 class="dialogue-text">Hey <span class="name-placeholder">Beautiful</span>... ✨</h2>
+                    <p class="dialogue-subtext">I made something special just for you</p>
+                    <button class="next-btn" data-next="3">
+                        <span>Continue</span> 💫
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Do You Love Me Question -->
+            <div class="dialogue-step" id="step-3">
+                <div class="dialogue-card glass-effect">
+                    <div class="dialogue-emoji">🥺💖</div>
+                    <h2 class="dialogue-text">Do You Love Me?</h2>
+                    <p class="dialogue-subtext">Please be honest... 💝</p>
+                    <div class="answer-buttons">
+                        <button class="yes-btn" id="yes-btn">
+                            <span class="btn-emoji">💖</span>
+                            Yes, I Love You!
+                        </button>
+                        <button class="no-btn" id="no-btn">
+                            <span class="btn-emoji">💔</span>
+                            No
+                        </button>
+                    </div>
+                    <p class="hint-text" id="hint-text"></p>
+                </div>
+            </div>
+
+            <!-- Step 4: Happy Response -->
+            <div class="dialogue-step" id="step-4">
+                <div class="dialogue-card glass-effect">
+                    <div class="dialogue-emoji">🥰😍💕</div>
+                    <h2 class="dialogue-text">I Knew It! 💖</h2>
+                    <p class="dialogue-subtext">You just made me the happiest person alive!</p>
+                    <button class="next-btn" data-next="5">
+                        <span>Continue</span> 🌹
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 5: Quiz Introduction -->
+            <div class="dialogue-step" id="step-5">
+                <div class="dialogue-card glass-effect">
+                    <div class="dialogue-emoji">🎯💭🤔</div>
+                    <h2 class="dialogue-text">Let's See How Well You Know Me!</h2>
+                    <p class="dialogue-subtext">Answer 8 quick questions about me 💕</p>
+                    <button class="next-btn" data-next="6">
+                        <span>Start Quiz</span> 🎮
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Question 1 -->
+            <div class="dialogue-step" id="step-6">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 1 of 8</div>
+                    <div class="dialogue-emoji">😌🤪</div>
+                    <h2 class="dialogue-text">What's my go-to mood?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="7">A) Chill 😌</button>
+                        <button class="quiz-option" data-next="7">B) Hyper 🤪</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Question 2 -->
+            <div class="dialogue-step" id="step-7">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 2 of 8</div>
+                    <div class="dialogue-emoji">🌙🎁</div>
+                    <h2 class="dialogue-text">What do I like more?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="8">A) Late-night talks 🌙</button>
+                        <button class="quiz-option" data-next="8">B) Random surprises 🎁</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Question 3 -->
+            <div class="dialogue-step" id="step-8">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 3 of 8</div>
+                    <div class="dialogue-emoji">🎧💬</div>
+                    <h2 class="dialogue-text">My favorite way to relax?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="9">A) Music + me time 🎧</button>
+                        <button class="quiz-option" data-next="9">B) Talking with you 💬💖</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Question 4 -->
+            <div class="dialogue-step" id="step-9">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 4 of 8</div>
+                    <div class="dialogue-emoji">🫶😜</div>
+                    <h2 class="dialogue-text">What describes me better?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="10">A) Soft-hearted 🫶</button>
+                        <button class="quiz-option" data-next="10">B) Funny troublemaker 😜</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Question 5 -->
+            <div class="dialogue-step" id="step-10">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 5 of 8</div>
+                    <div class="dialogue-emoji">✨🚀</div>
+                    <h2 class="dialogue-text">I get excited about…</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="11">A) Small moments ✨</button>
+                        <button class="quiz-option" data-next="11">B) Big dreams 🚀</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Question 6 -->
+            <div class="dialogue-step" id="step-11">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 6 of 8</div>
+                    <div class="dialogue-emoji">🤍🫂</div>
+                    <h2 class="dialogue-text">When I'm stressed, I prefer…</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="12">A) Quiet time 🤍</button>
+                        <button class="quiz-option" data-next="12">B) Comfort & hugs 🫂</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Question 7 -->
+            <div class="dialogue-step" id="step-12">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 7 of 8</div>
+                    <div class="dialogue-emoji">☕🎉</div>
+                    <h2 class="dialogue-text">My vibe is more…</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="13">A) Calm and cozy ☕</button>
+                        <button class="quiz-option" data-next="13">B) Energetic and fun 🎉</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Question 8 -->
+            <div class="dialogue-step" id="step-13">
+                <div class="dialogue-card glass-effect quiz-card">
+                    <div class="quiz-progress">Question 8 of 8</div>
+                    <div class="dialogue-emoji">💞🔐</div>
+                    <h2 class="dialogue-text">What do I value most?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-next="14">A) Trust 💞</button>
+                        <button class="quiz-option" data-next="14">B) Loyalty 🔐</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 14: Quiz Result -->
+            <div class="dialogue-step" id="step-14">
+                <div class="dialogue-card glass-effect result-card">
+                    <div class="dialogue-emoji">🎉🏆💯</div>
+                    <h2 class="dialogue-text">You Know Me 100%!</h2>
+                    <div class="result-score">💖 8/8 💖</div>
+                    <p class="dialogue-subtext">You really understand me, <span class="name-placeholder">my love</span>!
+                        That's why I love you so much! 🥰</p>
+                    <button class="next-btn" data-next="15">
+                        <span>Continue</span> 💕
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 15: Sweet Message -->
+            <div class="dialogue-step" id="step-15">
+                <div class="dialogue-card glass-effect">
+                    <div class="dialogue-emoji">🌙✨💫</div>
+                    <h2 class="dialogue-text"><span class="name-placeholder">You</span> Are My Everything</h2>
+                    <p class="dialogue-subtext">My sun, my moon, and all my stars 🌟</p>
+                    <button class="next-btn" data-next="16">
+                        <span>Continue</span> 💕
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 16: Promise -->
+            <div class="dialogue-step" id="step-16">
+                <div class="dialogue-card glass-effect">
+                    <div class="dialogue-emoji">💍🤞💝</div>
+                    <h2 class="dialogue-text">I Promise You, <span class="name-placeholder">My Love</span>...</h2>
+                    <p class="dialogue-subtext">To love you forever and always 💗</p>
+                    <button class="next-btn" data-next="17">
+                        <span>Continue</span> 🦋
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 17: Love Letter Reveal -->
+            <div class="dialogue-step" id="step-17">
+                <div class="dialogue-card glass-effect letter-reveal">
+                    <div class="dialogue-emoji">💌📜💕</div>
+                    <h2 class="dialogue-text">A Letter For <span class="name-placeholder">You</span></h2>
+                    <p class="dialogue-subtext">From the bottom of my heart... 💖</p>
+                    <button class="letter-btn" id="open-letter-btn">
+                        <span class="envelope">💌</span>
+                        <span>Open Love Letter</span>
+                        <span class="heart-bounce">💕</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="heart-icon pulse">❤️</div>
+                <h1 class="title fade-in">To My Dearest Love</h1>
+                <p class="subtitle fade-in-delay">Every moment with you is a beautiful memory</p>
+                <div class="scroll-indicator">
+                    <span>Scroll Down</span>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Love Letter Section -->
+        <section class="love-letter" id="letter">
+            <div class="letter-container glass-card">
+                <div class="letter-header">
+                    <div class="letter-hearts">💕</div>
+                </div>
+                <h2 class="letter-title">My Dearest,</h2>
+                <div class="letter-content">
+                    <p>From the moment you came into my life, everything changed. The colors became brighter, the music
+                        became sweeter, and every day became an adventure worth waking up for.</p>
+                    <p>You are my sunshine on cloudy days, my calm in the storm, and my reason to smile. Your laughter
+                        is my favorite melody, and your happiness is my greatest treasure.</p>
+                    <p>I promise to love you more with each passing day, to be there for you in every moment, and to
+                        make every Valentine's Day as special as you make my life.</p>
+                    <p class="signature">Forever Yours,<br><span class="heart-signature">❤️</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reasons I Love You Section -->
+        <section class="reasons" id="reasons">
+            <h2 class="section-title">Reasons I Love You</h2>
+            <div class="reasons-grid">
+                <div class="reason-card glass-card">
+                    <div class="reason-icon">🌟</div>
+                    <h3>Your Beautiful Smile</h3>
+                    <p>It lights up my world and makes everything better</p>
+                </div>
+                <div class="reason-card glass-card">
+                    <div class="reason-icon">💫</div>
+                    <h3>Your Kind Heart</h3>
+                    <p>The way you care for others inspires me every day</p>
+                </div>
+                <div class="reason-card glass-card">
+                    <div class="reason-icon">🦋</div>
+                    <h3>Your Gentle Soul</h3>
+                    <p>Being with you feels like coming home</p>
+                </div>
+                <div class="reason-card glass-card">
+                    <div class="reason-icon">✨</div>
+                    <h3>Your Amazing Spirit</h3>
+                    <p>You make every ordinary moment extraordinary</p>
+                </div>
+                <div class="reason-card glass-card">
+                    <div class="reason-icon">🌹</div>
+                    <h3>Your Beautiful Eyes</h3>
+                    <p>I could get lost in them forever</p>
+                </div>
+                <div class="reason-card glass-card">
+                    <div class="reason-icon">💝</div>
+                    <h3>Simply Being You</h3>
+                    <p>Every little thing about you is perfect to me</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Timeline Section -->
+        <section class="memories" id="memories">
+            <h2 class="section-title">Our Beautiful Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">The Day We Met</span>
+                        <h3>The Beginning of Forever</h3>
+                        <p>When our eyes first met, I knew something magical was about to begin. That moment changed my
+                            life forever. ❤️</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Our First Date</span>
+                        <h3>Butterflies & Smiles</h3>
+                        <p>Nervous laughs, stolen glances, and the realization that I wanted to spend every moment with
+                            you. 💕</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Every Day Since</span>
+                        <h3>Growing Together</h3>
+                        <p>Every laugh we shared, every challenge we faced together made our love stronger. 💖</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Today & Forever</span>
+                        <h3>Our Future Together</h3>
+                        <p>I can't wait to create more memories with you. Here's to our beautiful journey ahead! 💗</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Heart Message -->
+        <section class="interactive" id="interactive">
+            <div class="interactive-container">
+                <h2 class="section-title">Click the Heart</h2>
+                <div class="big-heart" id="big-heart">
+                    <span>💖</span>
+                </div>
+                <p class="love-message" id="love-message">You are my everything!</p>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section class="final-message" id="final">
+            <div class="final-content glass-card">
+                <div class="final-hearts">
+                    <span>💕</span><span>💗</span><span>💖</span><span>💗</span><span>💕</span>
+                </div>
+                <h2>Happy Valentine's Day!</h2>
+                <p class="final-text">Thank you for being you, for loving me, and for making my life complete. I love
+                    you more than words could ever express.</p>
+                <div class="infinite-love">
+                    <span>∞</span>
+                    <p>My love for you is infinite</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Background Music Toggle -->
+    <button class="music-toggle" id="music-toggle" aria-label="Toggle Music">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-container" id="chatbot-container">
+        <!-- Chat Toggle Button -->
+        <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open Chat">
+            <span class="chat-icon">💬</span>
+            <span class="chat-close">✕</span>
+        </button>
+
+        <!-- Chat Window -->
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">💕</div>
+                <div class="chatbot-info">
+                    <span class="chatbot-name">Love Assistant</span>
+                    <span class="chatbot-status">Online 💚</span>
+                </div>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="message-content">
+                        Hey there! 💕 I'm your love assistant. Ask me anything about love, relationships, or just chat!
+                        🥰
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off">
+                <button class="chatbot-send" id="chatbot-send">💌</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
